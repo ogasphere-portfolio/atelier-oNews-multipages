@@ -54,7 +54,15 @@ $articles = [
         'author'   => "Trevor Bayne",
         'text'     => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate atque repellat eveniet, similique laudantium architecto",
         'category' => "work",
-        'date'     => 'Le 25 Décembre 2018',
+        'date'     => 'Le 25 décembre 2018',
+        'icon'     => "icon-tre.png"
+    ],
+    7 => [
+        'title'    =>  "Les fraises à la sardine",
+        'author'   => "Trevor Bayne",
+        'text'     => "Ullam voluptate atque repellat eveniet, similique laudantium architecto",
+        'category' => "work",
+        'date'     => 'Le 25 juin 2021',
         'icon'     => "icon-tre.png"
     ]
 ];

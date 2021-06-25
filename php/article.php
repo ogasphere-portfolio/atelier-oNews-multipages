@@ -14,12 +14,20 @@ require 'data/articlesContenus.php';
 // l'article à afficher
 $idArticle = $_GET['article'];
 
-// Je récupère les données de l'article en selectionnant
-// la bonne entrée du tableau $articles
-$article = $articles[$idArticle];
+// si $idArticle correspond une clef existante de notre tableau $article
+if (array_key_exists($idArticle, $articles)) {
+// if (isset($articles[$idArticle])) {
 
-// // Inclus le code HTML de l'article
-require 'inc/article-template.php';
+    // Je récupère les données de l'article en selectionnant
+    // la bonne entrée du tableau $articles
+    $article = $articles[$idArticle];
 
+    // // Inclus le code HTML de l'article
+    require 'inc/article-template.php';
+}
+// Sinon
+else {
+    echo "Désolé, cet article n'existe (par contre, les fraises à la sardine oui)";
+}
 // Inclus le code HTML du footer
 require 'inc/footer.php';
