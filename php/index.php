@@ -14,7 +14,7 @@ require 'inc/header.php';
             <time datetime="2018-02-10">le 10 février 2018</time>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pacers, perferendis, saepe.</p>
-        <a href="article.php" class="post__link">
+        <a href="article.php?article=1" class="post__link">
             Continue reading
         </a>
     </article>
@@ -27,7 +27,7 @@ require 'inc/header.php';
             <time datetime="2018-03-27">le 27 mars 2018</time>
         </div>
         <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. </p>
-        <a href="article2.php" class="post__link">Continue reading</a>
+        <a href="article.php?article=2" class="post__link">Continue reading</a>
     </article>
     <article class="post">
         <a href="" class="post__category post__category--color-news">news</a>
@@ -38,7 +38,7 @@ require 'inc/header.php';
             <time datetime="2018-05-05">le 5 mai 2018</time>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Location magnam, distinctio! Vero blanditiis nisi veritatis id perferendis, quod quaerat necessitatibus ullam nobis quidem ipsam optio sit quibusdam ad quae voluptatibus doloremque!</p>
-        <a href="article3.php" class="post__link">Continue reading</a>
+        <a href="article.php?article=3" class="post__link">Continue reading</a>
     </article>
     <article class="post">
         <a href="" class="post__category post__category--color-work">work</a>
@@ -49,7 +49,7 @@ require 'inc/header.php';
             <time datetime="2018-07-31">le 31 juillet 2018</time>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pirates molestias molestiae, obcaecati et. Veritatis, laudantium!</p>
-        <a href="article4.php" class="post__link">Continue reading</a>
+        <a href="article.php?article=4" class="post__link">Continue reading</a>
     </article>
     <article class="post">
         <a href="" class="post__category post__category--color-team">team</a>
@@ -60,7 +60,7 @@ require 'inc/header.php';
             <time datetime="2018-09-02">le 2 septembre 2018</time>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Celtics nostrum obcaecati sit odit eveniet, unde hic animi molestiae, odio a quia aut perspiciatis dicta.</p>
-        <a href="" class="post__link">Continue reading</a>
+        <a href="article.php?article=5" class="post__link">Continue reading</a>
     </article>
     <article class="post">
         <a href="" class="post__category post__category--color-work">work</a>
@@ -71,7 +71,7 @@ require 'inc/header.php';
             <time datetime="2018-10-25">le 25 octobre 2018</time>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nascar vitae assumenda reiciendis doloremque, quisquam.</p>
-        <a href="" class="post__link">Continue reading</a>
+        <a href="article.php?article=6" class="post__link">Continue reading</a>
     </article>
 </div>
 

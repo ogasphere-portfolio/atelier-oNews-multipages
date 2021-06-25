@@ -2,18 +2,23 @@
 // Inclus le code HTML du header
 require 'inc/header.php';
 
-// Je déclare un tableau associatif contenant toutes les données de mon
-// article
-$article = [
-    'title'    => 'Lorem ipsum dolor article 1',
-    'author'   => 'Darren Collison',
-    'text'     => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sapiente possimus dolor molestias laboriosam et aliquam, blanditiis amet provident corrupti at doloremque quam distinctio. Fugiat quasi sed id! Earum corporis eum laboriosam possimus!',
-    'category' => 'team',
-    'date'     => 'le 10 février 2018',
-    'icon'     => 'icon-dar.png'
-];
+// Je charge le fichier qui contient tous les
+// articles
+require 'data/articlesContenus.php';
+// J'ai donc accès à la variable $articles
+// définie dans le fichier articlesContenus.php
+// var_dump($articles);
 
-// Inclus le code HTML de l'article
+// var_dump($_GET);
+// JE récupère le parametre GET permettant de connaitre
+// l'article à afficher
+$idArticle = $_GET['article'];
+
+// Je récupère les données de l'article en selectionnant
+// la bonne entrée du tableau $articles
+$article = $articles[$idArticle];
+
+// // Inclus le code HTML de l'article
 require 'inc/article-template.php';
 
 // Inclus le code HTML du footer
