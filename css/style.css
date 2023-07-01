@@ -1,7 +1,11 @@
 .left {
   position: fixed;
   width: 50%;
+<<<<<<< HEAD
   height: 100%; /* ou 100vh */
+=======
+  height: 100%;/* ou 100vh */
+>>>>>>> clockOlivier/master
   padding: 3em 2em 1em;
   background-image: url(../images/nicole.jpg);
   background-size: cover;
@@ -12,6 +16,7 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+<<<<<<< HEAD
 .left_contact {
   position: fixed;
   width: 50%;
@@ -26,6 +31,9 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+=======
+
+>>>>>>> clockOlivier/master
 .left__title {
   text-transform: uppercase;
   font-size: 1.4em;
@@ -42,7 +50,11 @@
   font-size: 0.9em;
   text-align: right;
   padding: 1em 4% 1em 16%;
+<<<<<<< HEAD
   background-color: rgba(155, 155, 155, 0.3);
+=======
+  background-color: rgba(155, 155, 155, .3);
+>>>>>>> clockOlivier/master
   text-shadow: 0 0 4px #333;
 }
 
@@ -77,17 +89,24 @@
 .left__nav-link:hover {
   color: inherit;
   text-decoration: none;
+<<<<<<< HEAD
   background-color: rgba(
     0,
     0,
     0,
     0.4
   ); /* 0.4 = transparence => 1=opaque, 0=transparent */
+=======
+  background-color: rgba(0, 0, 0, 0.4); /* 0.4 = transparence => 1=opaque, 0=transparent */
+>>>>>>> clockOlivier/master
   border-radius: 6px;
 }
 
 /* RIGHT */
+<<<<<<< HEAD
 
+=======
+>>>>>>> clockOlivier/master
 .right {
   width: 50%;
   margin-left: 50%;
@@ -172,6 +191,7 @@
   background-color: #0766f0;
 }
 
+<<<<<<< HEAD
 .post-entier {
   width: 100%;
   padding: 1.5em;
@@ -270,3 +290,26 @@ input[type="reset"] {
   box-shadow: 1px 1px 1px #d83f3d;
   cursor: pointer;
 } */
+=======
+
+.contact__group {
+  padding: 10px;
+  border-left: solid 1px #4cced3;
+}
+
+.contact__text {
+  border: none;
+  background-color: #f9f9f9;
+  padding: 5px;
+  border-bottom: solid 2px #4cced3;
+}
+
+.contact__button {
+  border: none;
+  background-color: #4cced3;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+}
+>>>>>>> clockOlivier/master
