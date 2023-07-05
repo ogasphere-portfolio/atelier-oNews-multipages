@@ -1,0 +1,148 @@
+<h1 id="onews---multipage">oNews - Multipage</h1>
+<p>O'Clock n'a pas encore sorti son journal d'étudiants 😱</p>
+<p>Bah oui, on n'affichait jamais le contenu complet de chaque article !!</p>
+<p>Votre mission, si vous l'acceptez (… pfff évidemment qu'on l'accepte), sera de créer de nouvelles pages pour chaque article 💪</p>
+<p><img src="article.png" alt="homepage" /></p>
+<h2 id="préambule">Préambule</h2>
+<ul>
+<li>l'intégration a déjà été effectuée</li>
+<li>une intégration de <em>correction</em> est fournie avec cet atelier, mais vous pouvez utiliser votre intégration de oNews à la place si vous le souhaitez</li>
+<li>pour être interprété, le code PHP doit être écrit dans un fichier <code>.php</code></li>
+<li><a href="https://kourou.oclock.io/ressources/fiche-recap/la-syntaxe-php/#un-peu-de-html-avec-%c3%a7a">fiche récap mélange PHP & HTML</a></li>
+</ul>
+<h2 id="étape-1---premier-article">Étape 1 - Premier article</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Rediriger l'internaute sur la page du premier article avec son texte complet</p>
+<h3 id="comment-faire-">Comment faire ?</h3>
+<ul>
+<li>créer un fichier <code>html/article.html</code> qui contiendra le code pour cette nouvelle page Web</li>
+<li>le texte sera un <em>lorem</em> de 400 caractères (emmet : <code>lorem400</code>)</li>
+<li>mettre en place le lien de <em>Continue reading</em> du premier article vers cette page HTML créée</li>
+<li>faire l'intégration HTML/CSS de cette page <code>html/article.html</code> selon le screenshot fourni plus haut</li>
+<li>un lien "Back to home" n'apparait pas sur le screenshot mais est présent après le texte de l'article. Il reprend le même style que le lien <em>Continue reading</em></li>
+</ul>
+<h2 id="étape-2---factoriser">Étape 2 - Factoriser</h2>
+<h3 id="problème">Problème</h3>
+<p>Le code HTML est majoritairement dupliqué entre ces 2 fichiers HTML</p>
+<h3 id="objectif-1">Objectif</h3>
+<p>Factoriser ce code HTML, c'est-à-dire éviter les répétitions</p>
+<h3 id="comment-faire--1">Comment faire ?</h3>
+<ul>
+<li>HTML = statique</li>
+<li>PHP = dynamique</li>
+<li>copier ces fichiers HTML dans le répertoire <code>php</code> puis renommer</li>
+<li>analyser le code HTML pour savoir quels contenus factoriser</li>
+<li>créer des fichiers PHP si besoin, dans le répertoire <code>inc</code></li>
+</ul>
+<p><details><summary>Indices</summary></p>
+<ul>
+<li>il faut bien penser à renommer les fichiers en <code>.php</code></li>
+<li><code>include</code> ou <code>require</code> pour inclure des fichiers en PHP</li>
+<li>les fichiers inclus devront se trouver dans un sous-répertoire (bonne pratique) comme <code>inc</code>, <code>templates</code>, <code>views</code>, etc.</li>
+</ul>
+<p></details></p>
+<h2 id="étape-3---données-dynamiques">Étape 3 - Données dynamiques</h2>
+<h3 id="objectif-2">Objectif</h3>
+<p>Rendre les données de la page "article" dynamiques</p>
+<h3 id="comment-faire--2">Comment faire ?</h3>
+<ul>
+<li>créer un tableau associatif contenant les données suivantes sur le premier article :<ul>
+<li>titre</li>
+<li>auteur</li>
+<li>texte</li></ul></li>
+<li>au sein du code HTML de la page, afficher les données du tableau pour remplacer ces mêmes données, actuellement écrites "en dur" (statique)</li>
+<li>en bonus, stocker aussi les données suivantes dans le tableau associatif :<ul>
+<li>catégorie</li>
+<li>date de publication</li>
+<li>l'image de l'auteur</li></ul></li>
+</ul>
+<p><details><summary>Indices</summary></p>
+<ul>
+<li>attention, il y a deux dates, une date visible dans le rendu du navigateur et une date en HTML, utile lorsqu'un logiciel analyse la page, pensez à stocker les deux</li>
+<li><a href="https://kourou.oclock.io/ressources/fiche-recap/la-syntaxe-php/#tableaux-associatifs">fiche récap tableau associatif</a></li>
+<li><a href="https://kourou.oclock.io/ressources/fiche-recap/la-syntaxe-php/#un-peu-de-html-avec-%c3%a7a">fiche récap mélange PHP & HTML</a></li>
+<li>on peut stocker en clé le nom de la donnée (comme le nom d'une variable)</li>
+<li>et en valeur, la valeur de cette donnée</li>
+<li>l'utilisation du tableau permet de regrouper toutes ces informations en une seule variable</li>
+</ul>
+<p><details><summary>Spoiler</summary></p>
+<p><strong>PHP</strong></p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$data</span> = [
+    <span class="hljs-string">&#x27;title&#x27;</span> =&gt; <span class="hljs-string">&#x27;Lorem ipsum dolor sit amet&#x27;</span>,
+    <span class="hljs-string">&#x27;author&#x27;</span> =&gt; <span class="hljs-string">&#x27;John Marchill&#x27;</span>,
+    <span class="hljs-string">&#x27;text&#x27;</span> =&gt; <span class="hljs-string">&#x27;Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sapiente possimus dolor molestias laboriosam et aliquam, blanditiis amet provident corrupti at doloremque quam distinctio. Fugiat quasi sed id! Earum corporis eum laboriosam possimus!&#x27;</span>,
+]
+</code></pre>
+<p><strong>HTML</strong></p>
+<pre><code class="hljs php language-php">&lt;h2 <span class="hljs-class"><span class="hljs-keyword">class</span>=&quot;<span class="hljs-title">right__title</span>&quot;&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">echo</span> $<span class="hljs-title">data</span>[&#x27;<span class="hljs-title">title</span>&#x27;] ?&gt;&lt;/<span class="hljs-title">h2</span>&gt;
+</span></code></pre>
+<p></details></p>
+<p></details></p>
+<h2 id="étape-4---navigation">Étape 4 - Navigation</h2>
+<h3 id="objectif-3">Objectif</h3>
+<p>Rendre le menu de gauche dynamique</p>
+<h3 id="comment-faire--3">Comment faire ?</h3>
+<ul>
+<li>créer les 3 pages suivantes, à partir de leur version HTML (voir dossier <code>html</code>)</li>
+<li><code>plan_de_site.php</code></li>
+<li><code>mentions_legales.php</code></li>
+<li><code>contact.php</code></li>
+<li>⚠️ on ne veut toujours pas dupliquer notre code HTML, donc on utilisera les templates existantes</li>
+<li>créer un tableau associatif contenant le nom et le lien de chaque élément du menu de gauche (plan du site, etc.)</li>
+<li>parcourir ce tableau afin de générer le code HTML de cette navigation</li>
+</ul>
+<p><details><summary>Indices</summary></p>
+<ul>
+<li><a href="https://kourou.oclock.io/ressources/fiche-recap/la-syntaxe-php/#tableaux-associatifs">fiche récap tableau associatif</a></li>
+<li>on peut stocker le label de chaque lien en clé</li>
+<li>et l'URL en valeur</li>
+<li>le moyen le plus simple pour parcourir un tableau est un <code>foreach</code> <a href="https://kourou.oclock.io/ressources/fiche-recap/les-boucles/#foreach">fiche récap</a></li>
+</ul>
+<p></details></p>
+<h2 id="étape-5---toutes-les-pages-_articles_">Étape 5 - Toutes les pages <em>articles</em></h2>
+<h3 id="objectif-4">Objectif</h3>
+<p>Créer une page pour chaque article</p>
+<h3 id="comment-faire--4">Comment faire ?</h3>
+<ul>
+<li>créer un fichier PHP par page supplémentaire (dans le dossier <code>php</code>)</li>
+<li>mettre en place les liens <em>Continue reading</em> des articles vers la page (fichier PHP) correspondante</li>
+</ul>
+<p><details><summary>Pour information</summary></p>
+<ul>
+<li>à la fin d'un script PHP, toutes les données sont détruites</li>
+<li>les variables de la page précédente sont perdues</li>
+<li>on ne peut pas transférer des données d'une page à l'autre</li>
+<li>à chaque page PHP appelée (via navigateur), on recommence de 0 #poissonrouge</li>
+</ul>
+<p></details></p>
+<p><details><summary>Indices</summary></p>
+<ul>
+<li>créer les fichiers :<ul>
+<li><code>php/article2.php</code></li>
+<li><code>php/article3.php</code></li>
+<li><code>php/article4.php</code></li>
+<li><code>php/article5.php</code></li>
+<li><code>php/article6.php</code></li></ul></li>
+<li>dans chaque fichier :<ul>
+<li>créer le tableau associatif contenant les données à afficher pour l'article en question</li>
+<li>le code HTML de la page article est répété 😱<ul>
+<li>créer un fichier de <code>template</code> pour les articles</li>
+<li>utiliser (inclusion) ce fichier de <code>template</code> dans les pages <code>article*.php</code></li></ul></li></ul></li>
+</ul>
+<p></details></p>
+<h2 id="étape-6---formulaires">Étape 6 - Formulaires</h2>
+<h3 id="objectif-5">Objectif</h3>
+<p>Comprendre comment demander des données/informations à l'internaute</p>
+<h3 id="comment-faire--5">Comment faire ?</h3>
+<ul>
+<li>lire la documentation sur les formulaires HTML 🎉</li>
+<li>https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Mon<em>premier</em>formulaire_HTML</li>
+</ul>
+<h2 id="bonus---page-de-contact">Bonus - page de contact</h2>
+<p>Les 5 étapes sont terminées 😲 bravo 👍</p>
+<p>On peut passer au bonus alors :</p>
+<ul>
+<li>créer une page de contact</li>
+<li>écrire un formulaire HTML</li>
+</ul>
+<p>Tous les détails se trouvent dans <a href="bonus.md">le fichier du bonus</a> 😉</p>
